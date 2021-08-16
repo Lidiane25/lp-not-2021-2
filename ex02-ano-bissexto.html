@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-02 Ano Bissexto</title>
+    <script>
+        //Peça ao usuário para informar um ano e determine
+        //se é bissexto pela regra:
+        //1) Se o ano divide por 400 é bissexto; *OU*
+        //2) se divide por 4 *E* não divide por 100, é bissexto
+        //Alguns anos para testar:
+        //1900: não é
+        //1600: bissexto
+        //1975: não é
+        //1992: bissexto
+        //2020: bissexto
+        //2000: bissexto
+        //2013: não é
+        //A regra vale para anos >= 1582-calendário gregoriano
+
+        let ano = parseInt(prompt("Digite um ano MAIOR que 1582 para saber se ele é BISSEXTO"))
+
+        if (isNaN(ano) || ano < 1582)
+        {
+            alert('ERRO: Este ANO informado não é valido') 
+        }
+
+       /*
+        else if (ano % 400===0 ) // Ano dívisivel por 400
+        {
+            alert('Este ano ' + ano +' digitado  é BISSEXTO')
+        }
+
+        else if ((ano % 4===0) && (ano % 100 !==0)) // Divide por 4 mas não por 100
+        {
+            alert('Este ano '+ ano + 'digitado é BISSEXTO') 
+        }
+        */
+       else if( ano % 400===0 || (ano % 4===0 && ano % 100 !==0))
+       {
+         alert('Este ano '+ ano +' digitado é BISSEXTO')  
+       }
+        else 
+        {
+            alert('Este ano '+ ano +' digitado  NÃO é BISSEXTO')
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

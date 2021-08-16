@@ -6,27 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 01 Par e Impar </title>
     <script>
-     // Peça ao usuário para informar um número, usando o pronpt().
-     //Determine se o número digitado é par ou impar e informe ao usuário usando o Alert()
+        // Peça ao usuário para informar um número, usando o pronpt().
+        //Determine se o número digitado é par ou impar e informe ao usuário usando o Alert()
      
-     // Entrada
-     let num1 = Number(prompt('Informe um número e verificar se ele é par ou impar:'))
+        // Entrada
+
+        // number - transforma em numero inteiro e fracionario
+        // parseInt() - *tenta* converte uma string em um número INTEIRO
+         let num = parseInt(prompt('Informe um número e verificar se ele é par ou impar:'))
      
-     if(isNaN(num1))
-     {
-         ("ERRO: Este valor não é um número")
-     }
+        if(isNaN(num)) // A conversão parseInt() falhou
+        {
+            alert("ERRO:  O valor informado não é um número inteiro!!")
+        }
      
 
-     if(num1 % 2 === 0)
+        else if(num % 2 === 0)
        {
-      alert("O número informado é par");
+             alert("O número informado ("+ num +") é PAR")
        }
 
-    else
-    {
-       alert("O número informado é impar")   
-    }
+        else
+        {
+             alert("O número informado ("+ num +") é IMPAR")   
+        }
+    
     </script>
 
 
