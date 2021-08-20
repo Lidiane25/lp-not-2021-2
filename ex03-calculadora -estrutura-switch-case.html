@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio03-Calculadora-Switch-case</title>
+<script>
+/*
+Solicite ao usuário para informar dois números e um operador
+matemático. Você usará três prompt(), um para cada número e
+o terceiro para o operador.
+Aceite os seguintes operadores:
++ => adição
+- => subtração
+*, X ou x => multiplicação
+/ ou : => divisão
+Efetue o cálculo apropriado de acordo com o operador informado
+e informe o resultado usando document.write().
+*/
+
+
+//Number() e ParseFloat tem a mesma função parseFloat e mais antigo tenta converter  string
+//em numeros com casas decimais
+    let num1 = Number(prompt('Informe o primeiro número')) 
+    let num2 = parseFloat(prompt('Informe o segundo numero'))
+    let oper = prompt('Digite a operação desejada(Operadores (+ - * X x / :):')
+
+    if (isNaN(num1) || isNaN(num2))
+    {
+        alert('ERRO: Este operador digitado não é válido não foi possível efetuar a operação aritmética')
+    }
+
+    else
+    {
+        switch(oper)
+        {
+            case '+':
+                document.write(num1 + num2)
+                break
+
+            case '-':   
+                 document.write(num1 - num2)
+                 break
+            
+            case '*':  //case vazio
+            case 'X':  //case vazio
+            case 'x':
+                document.write(num1 * num2)
+                break
+
+            case '/':   //case vazio
+            case ':':
+                document.write(num1 / num2)
+                break  
+                
+            default:  // no switch esse corresponde ao 'ELSE'
+                alert('ERRO: Operador inválido ')    
+        }
+    }       
+
+    /*
+    else if (oper ==='+')
+    {
+        let soma = num1 + num2
+        // o professor fez da seguinte maneira
+        // document.write(num1+num2)
+        document.write( 'A soma dos numeros é: ' + soma)
+    }
+    else if (oper ==='-')
+    {
+        let subtr = num1 - num2
+        document.write('A subtração dos números é: ' + subtr)
+    }
+    else if (oper ==='x' || oper ==='X' || oper ==='*')
+    {
+        let multip = num1 * num2
+        document.write('A multiplicação dos números é: ' + multip)
+    }
+    else if (oper ==='/' || oper === ':')
+    {
+        let div = num1 / num2
+        document.write('A divisão dos números é: ' + div)
+    }
+    else 
+    {
+        alert('ERRO: operador inválido!!!!')
+    }
+    */
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
