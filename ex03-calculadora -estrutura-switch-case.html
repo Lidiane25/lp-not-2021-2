@@ -25,6 +25,7 @@ e informe o resultado usando document.write().
     let num1 = Number(prompt('Informe o primeiro número')) 
     let num2 = parseFloat(prompt('Informe o segundo numero'))
     let oper = prompt('Digite a operação desejada(Operadores (+ - * X x / :):')
+    let resultado
 
     if (isNaN(num1) || isNaN(num2))
     {
@@ -36,22 +37,28 @@ e informe o resultado usando document.write().
         switch(oper)
         {
             case '+':
-                document.write(num1 + num2)
+                //document.write(num1 + num2)
+                //pra não ficar repetindo o document.write criamos a variavel resultado e 
+                //utilizamos só no final  
+                resultado = num1 + num2
                 break
 
             case '-':   
-                 document.write(num1 - num2)
+                 //document.write(num1 - num2)
+                 resultado = num1 - num2
                  break
             
             case '*':  //case vazio
             case 'X':  //case vazio
             case 'x':
-                document.write(num1 * num2)
+                //document.write(num1 * num2)
+                resultado = num1 * num2
                 break
 
             case '/':   //case vazio
             case ':':
-                document.write(num1 / num2)
+                //document.write(num1 / num2)
+                resultado = num1 / num2
                 break  
                 
             default:  // no switch esse corresponde ao 'ELSE'
@@ -59,6 +66,21 @@ e informe o resultado usando document.write().
         }
     }       
 
+    //document.write(num1 + ' ' + oper + ' ' + num2 + ' é igual a ' + resultado)
+
+    // aqui temos uma variável  concatenando + outra varíavel tem muita concatenação
+    //tem outra forma de fazer :
+    //String templates são strings delimitadas por ''(acento agudo ou crase)
+    // e que aceitam , dentro delas , a interpolação de variáveis usando o código
+    //${}
+
+    if(resultado !==undefined)
+    {
+        document.write(`${num1} ${oper} ${num2} é igual a ${resultado}`)
+    }
+
+
+   
     /*
     else if (oper ==='+')
     {
