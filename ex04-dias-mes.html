@@ -18,7 +18,7 @@
  */
 
 let mes = parseInt(prompt('Informe o número correspondente de um  mês (que esteja de 1 a 12'))
-
+let nomeMes
 if (isNaN(mes))
 {
     alert('ERRO: O número Informado não corrresponde ao número de um mês válido!!!')
@@ -34,14 +34,14 @@ if (isNaN(mes))
         case '8':
         case '10':
         case '12':
-        document.write('Este mês possui 31 dias')
-        break
+        document.write(`${nomeMes}`)
+        nomeMes = ('O Mês digitado possui 31 dias') 
         
 
         
      }
  }
-
+ 
  
 
     </script>
