@@ -18,7 +18,6 @@
  */
 
 let mes = parseInt(prompt('Informe o número correspondente de um  mês (que esteja de 1 a 12'))
-let mesResult
 
 if (isNaN(mes))
 {
@@ -29,16 +28,21 @@ if (isNaN(mes))
      switch(mes)
      {
         case '1':
-            mesResult('Este mês e Janeiro e possui 31 dias')
-           document.write(`${mes} O mês informado possui 31 dias ${mesResult}`  )
-       break
+        case '3':
+        case '5':
+        case '7':
+        case '8':
+        case '10':
+        case '12':
+        document.write('Este mês possui 31 dias')
+        break
         
 
         
      }
  }
 
-
+ 
 
     </script>
 </head>
