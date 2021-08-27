@@ -35,74 +35,73 @@
 
         let digito
         let letra
-
+        let result
+ 
+       
 
 do {
 digito = Number(prompt('Informe um dígito de 0 a 9 '))
-}while (isNaN(digito) || digito >= 0 && digito  <= 9)
-alert('ERRO: número informado é inválido!!')
+}while (isNaN(digito >= 0 && digito <= 9))
 
-
-switch(letra){
-
-        case 'A':
-        case 'a':     
-        digito = 0
-        break
-
-        case 'B':
-        case 'b':    
-        digito = 1
-        break
-
-        case 'C':
-        case 'c':     
-        digito = 2
-        break
-
-        case 'D':
-        case 'd':     
-        digito = 3
-        break
-
-        case 'E':
-        case 'e':     
-        digito = 4
-        break
-
-        case 'F':
-        case 'f':     
-        digito = 5
-        break
-       
-        case 'G':
-        case 'g':     
-        digito = 6
-        break
-
-        case 'H':
-        case 'h':     
-        digito = 7
-        break
-
-        case 'I':
-        case 'i':     
-        digito = 8
-        break
-
-        case 'J':
-        case 'j':     
-        digito = 9
-        break
-
-  default:  
-                alert('ERRO: A Letra informada é inválida!!!!') 
-
-
+if(isNaN(digito >= 0 && digito <= 9))
+{
+   alert('ERRO o número digitado não é válido') 
 }
 
-alert(`A Letra informada é: ${letra }`)
+    else
+    {
+   
+        switch(digito)
+   
+        {
+          case 0:    
+          letra = 'A'
+          break
+          
+          case 1:
+          letra = 'B'
+          break
 
+          case 2:
+          letra = 'C'
+          break
+
+          case 3:
+          letra = 'D'
+          break
+
+          case 4:
+          letra = 'E'
+          break
+
+          case 5:
+          letra = 'F'
+          break
+
+          case 6:
+          letra = 'G'
+          break
+
+          case 7:
+          letra = 'H'
+          break
+
+          case 8:
+          letra = 'I'
+          break
+
+          case 9:
+          letra = 'J'
+          break
+
+            default:  
+            alert('ERRO: Digito Inválido!!!!') 
+
+        }
+
+    }  
+
+    alert('O digito infomado é '+ digito +' corresponde a letra  '+ letra +'')
 
 
 
