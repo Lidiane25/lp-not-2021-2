@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placa Mercosul</title>
+
+    <script>
+// Recentemente, as placas de automóveis no Brasil passaram a usar o chamado "Modelo Mercosul".
+
+//Nesse Modelo,  o segundo dígito númerico do modelo anterior passou a ser
+// representado por uma letra.
+// A conversão é regida pela tabela:
+
+     /*  Digito      Letra
+           0            A
+            1           B
+            2           C
+            4           D
+            5           E
+            6           F
+            7           H
+            8           I
+            9           J
+     */               
+        // Assim, a placa tradicional ABC-1234, no formato do padrão Mercosul
+        //ficaria ABC-1C34
+
+        //Peça para o usuário informar um dígito válido entre 0 a 9. Com o loop 
+        //do..while, faça a validação , repetindo a solicitação até que a resposta
+        //obtida seja válida
+        //Em seguida, usando a estrutura de decisão switch..case, informe ao usuário
+        //a letra correspondente ao digito informado.
+
+        let digito
+        let letra
+
+
+do {
+digito = Number(prompt('Informe um dígito de 0 a 9 '))
+}while (isNaN(digito) || digito >= 0 && digito  <= 9)
+alert('ERRO: número informado é inválido!!')
+
+
+switch(letra){
+
+        case 'A':
+        case 'a':     
+        digito = 0
+        break
+
+        case 'B':
+        case 'b':    
+        digito = 1
+        break
+
+        case 'C':
+        case 'c':     
+        digito = 2
+        break
+
+        case 'D':
+        case 'd':     
+        digito = 3
+        break
+
+        case 'E':
+        case 'e':     
+        digito = 4
+        break
+
+        case 'F':
+        case 'f':     
+        digito = 5
+        break
+       
+        case 'G':
+        case 'g':     
+        digito = 6
+        break
+
+        case 'H':
+        case 'h':     
+        digito = 7
+        break
+
+        case 'I':
+        case 'i':     
+        digito = 8
+        break
+
+        case 'J':
+        case 'j':     
+        digito = 9
+        break
+
+  default:  
+                alert('ERRO: A Letra informada é inválida!!!!') 
+
+
+}
+
+alert(`A Letra informada é: ${letra }`)
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
