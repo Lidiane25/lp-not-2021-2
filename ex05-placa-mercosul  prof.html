@@ -35,21 +35,14 @@
 
         let digito
         let letra
-
+       
  
        
-//////eu errei na verificacao tem que ser < 0 e maior que >9***********
+
 do {
-digito = Number(prompt('Informe um dígito de 0 a 9 '))
-}while (isNaN(digito >= 0 && digito <= 9))
+digito = parseInt(prompt('Informe um dígito de 0 a 9 '))
+}while (isNaN(digito) || digito < 0 || digito > 9 )
 
-if(isNaN(digito >= 0 && digito <= 9))
-{
-   alert('ERRO o número digitado não é válido') 
-}
-
-    else
-    {
    
         switch(digito)
    
@@ -90,15 +83,11 @@ if(isNaN(digito >= 0 && digito <= 9))
           letra = 'I'
           break
 
-          case 9:
+          default:   // ou case 9
           letra = 'J'
           break
-
-            default:  
-            alert('ERRO: Digito Inválido!!!!') 
-
-        }
-
+       
+     
     }  
 
     alert('O digito infomado é '+ digito +' corresponde a letra  '+ letra +'')
