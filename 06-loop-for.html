@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOP FOR</title>
+    <script>
+        //CONTAGEM DE 1 A 10
+        //Anatomia do loop for em JavaScript
+        /*
+
+        Dentro dos parênteses do loop FOR, há TRÊS BLOCOS
+        separadas entre si por PONTO E VÍRGULA;
+
+        1) INICIALIZAÇÃO: É onde a variável de controle do 
+        loop ganha seu valor inicial. A variável pode inclusive,
+        ser declarada nesse bloco. É executado apenas uma vez.
+
+        2) CONDIÇÃO: o Loop será executado enquanto a condição se 
+        mantiver verdadeira. É e reavaliada a cada interação(volta )
+        ao LOOP.
+        
+        3)INCREMENTO: nesse bloco, o valor da variável de controle é ajustado
+        (normalmente com incremento de 1 unidade), o que provoca a reavaliação
+        da condição
+
+        */
+
+        for(let i = 1; i <= 10; i++)
+        document.write(i + "<br>")
+
+        // Traço em HTML
+        document.write("<hr>")
+
+        //Contagem regressiva de 10 a 1
+
+        //**********for(let x = 10; x >= 1; x--)*** Duas maneiras** cada
+        //****uma com sua função tem que analisar se vai precisar depois
+        //do termino do for
+        let x
+
+        for( x = 10; x >= 1; x--)
+
+        {
+            document.write(x + "<br>")
+        }
+    // declarar a variável dentro do for vc tem um problema se vc colocar fora
+    //do for nao aparece pq ela morreu no for.
+    // se você precisar da varável apos o termino do for vc tem que declarar 
+
+       document.write("O Valor de x é " + x)
+
+          // Traço em HTML
+          document.write("<hr>")
+
+
+          //Contagem de 1 a 100 saltando de 3 em 3
+
+          for(let i = 1; i<=100; i+=3 )
+          {
+              document.write(i + "<br>")
+          }
+
+          //Caracteristica do loop for
+          // 1) Quantidade de execuções: Determinada ou determinável
+          // 2) Garantia de execução:  0
+          // 3) Local da avaliação da condição: INICIO
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
