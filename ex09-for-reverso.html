@@ -9,7 +9,31 @@
         /*  Peça ao usuário que informe um número inteiro maior que 
         1 e  implemente um for que calcule o valor do fatorial dele,  
         começando o cálculo pelo próprio número e terminando em 1.  
-        Exemplos:  5! = 5 * 4 * 3 * 2 * 1  7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         */
+        Exemplos:  5! = 5 * 4 * 3 * 2 * 1  7! = 7 * 6 * 5 * 4 * 3 * 2 * 1  
+          
+        */
+
+        
+
+        let num = Number(prompt('Informe um número inteiro (maior que 1 ):'))
+       
+        if(isNaN(num > 1)) {
+           
+            alert('ERRO: O número informado não é maior que 1 !')
+        }
+
+        let fat = 1
+        for (let i = 1 ; i <= num; i++)
+		 {
+           fat = fat * i
+         }
+
+       
+        document.write(`O número digitado é ${num} o fatorial é ${fat}`)
+
+    
+
+
     </script>
 </head>
 <body>
