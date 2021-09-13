@@ -15,21 +15,22 @@
 
         
 
-        let num = Number(prompt('Informe um número inteiro (maior que 1 ):'))
-       
-        if(isNaN(num > 1)) {
-           
-            alert('ERRO: O número informado não é maior que 1 !')
-        }
+        let num  
 
-        let fat = 1
-        for (let i = 1 ; i <= num; i++)
+        do {
+           num = parseInt(prompt('Informe um número inteiro (maior que 1 ):'))
+        } while(isNaN(num) || num <=1)
+        
+
+        let fatorial = 1
+
+        for (let i = num ; i > 1; i--)
 		 {
-           fat = fat * i
+           fatorial *= i
          }
 
        
-        document.write(`O número digitado é ${num} o fatorial é ${fat}`)
+        document.write(`O número digitado é ${num}! o fatorial é ${fatorial}`)
 
     
 
