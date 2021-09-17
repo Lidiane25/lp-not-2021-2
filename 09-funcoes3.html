@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcoes 3</title>
+    <script>
+        /*
+            FUNCÕES SEM RETORNO
+            São funções que desempenham uma tarefa, mas não retornam
+            um valor domo resultado
+        */
+
+        function desenharTraco(tamanho)
+        {
+            for (let i = 1; i <= tamanho; i++)
+            {
+                document.write(" - ")
+            }
+            document.write("<br>")
+        }
+
+        //Chamadas de função. Note que não atribuição das chamadas
+        // a variáveis, uma vez qua a função nao retorna valor
+
+       let x = desenharTraco(50)
+       document.write(`O valor da variável x é ${x}<br>`)
+        desenharTraco(30)
+        desenharTraco(75)
+
+
+        /*
+
+        FUNÇÃO SEM PARÂMETRO
+        
+        Uma função pode não precisar de informações externas para fazer
+        o seu trabalho. Nesse caso, os parênteses que seguem o nome da 
+        função permanecem, tanto na declaração quanto na chamada da função.
+        */
+
+        function agora()// retorna a hora atual do computador
+        {
+            let hoje = new Date()
+            return hoje.getHours() + ":" + hoje.getMinutes() + ":" +
+            hoje.getSeconds()
+        }     
+        document.write(`Hora atual: ${agora()}<br>`)
+
+        //FUNÇÃO SEM PARÂMETRO E SEM RETORNO *******
+
+        function saudacao()
+        {
+            let hoje = new date()
+            let hora = hoje.getHours()
+
+            if (hora < 12)
+            {
+                document.write('Bom dia!<br>')
+            }
+
+            else if(hora < 18)
+            {
+                document.write('Boa Tarde!<br>')
+            }
+
+            else
+            {
+                document.write('Boa Noite!<br>')
+            }
+        }
+          saudacao() // chamada da função
+
+          /*
+            O(s) ultimos parâmetos
+
+
+
+          */
+          // o tipo passa a ser um parâmetro opcional. Se for omitido
+          //durante a chamada assumirá o valor "R"
+          function calcArea(base, altura, tipo = 'R')
+         {
+             let calcArea
+
+             switch(tipo)
+             {
+                 case 'R':   // retângulo
+                 area = base * altura
+                 break
+
+                 case 'T':   // Triângulo
+                 area = base * altura /2
+                 break
+                 
+                 case 'E':  // Elipse
+                 area = (base / 2) * (altura / 2) * Math.PI
+                 break 
+
+                 default:     // forma não reconhecida
+                     area = null
+
+             }
+
+             return area
+
+        }
+       //document.write(`Àrea de um retângulo 10x12: ${calcArea(10, 12, 'R' )}<br>`)
+       // para voce parametro opcional você coloca la na function
+       
+       document.write(`Àrea de um retângulo 10x12: ${calcArea(10, 12)}<br>`)
+       document.write(`Àrea de um triângulo 7x25: ${calcArea( 7, 25, 'T' )}<br>`)
+       document.write(`Àrea de um retângulo 4.5x4.5: ${calcArea(4.5, 4.5)}<br>`)
+       document.write(`Àrea de um retângulo 19x12.5: ${calcArea(19, 12.5)}<br>`)
+       document.write(`Àrea de um elipse 8x8: ${calcArea(8, 8, 'E')}<br>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
