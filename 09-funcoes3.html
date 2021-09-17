@@ -9,7 +9,7 @@
         /*
             FUNCÕES SEM RETORNO
             São funções que desempenham uma tarefa, mas não retornam
-            um valor domo resultado
+            um valor como resultado
         */
 
         function desenharTraco(tamanho)
@@ -51,7 +51,7 @@
 
         function saudacao()
         {
-            let hoje = new date()
+            let hoje = new Date()
             let hora = hoje.getHours()
 
             if (hora < 12)
@@ -69,14 +69,17 @@
                 document.write('Boa Noite!<br>')
             }
         }
+
           saudacao() // chamada da função
 
           /*
-            O(s) ultimos parâmetos
+           FUNÇÃO COM PARÂMETROS(S) oPCIONAL(IS)
 
-
-
+            O(s) ultimos parâmetos de uma função podem se tornar
+            opcionais caso seja fornecido um valor que será usado como 
+            padrão para caso de ele(s) não ser(em) passado(s) na chamada
           */
+
           // o tipo passa a ser um parâmetro opcional. Se for omitido
           //durante a chamada assumirá o valor "R"
           function calcArea(base, altura, tipo = 'R')
