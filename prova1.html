@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+    <script>
+        //2 - O usuário irá informa o dia do seu nascimento
+
+        let dia, mes, ano
+
+        do {
+              dia = parseInt(prompt('Digite o dia do seu nascimento:'))
+        } while(isNaN(dia) || dia < 1 || dia > 31)
+
+        document.write(`O dia informado é ${dia}.<br>`)
+
+       // 3 - O Usuário irá informar o Mês do seu nascimento
+
+        do {
+             mes = parseInt(prompt('Digite o mês do seu nascimento:'))
+        } while(isNaN(mes) || mes < 1 || mes > 12)
+
+        document.write(`O mês informado é ${mes}.<br>`)
+
+        //  4- O usuário irá informar o ano do seu nascimento
+        do {
+                ano = parseInt(prompt('Informe o ano do seu nascimento:'))
+        } while(isNaN(ano) || ano < 1921 || ano > 2021)
+
+        document.write(`O ano informado é ${ano}.<br>`)
+
+        //Declare uma função que receba o dia, o mês e o ano.Dentro dela, some os valores do ano e do mês
+        //e multiplique o resultado pelo valor do dia. A função deverá retornar o resto do valor obtido
+        //no calculo anterior por 4.
+
+        function dataNasc(dia, mes , ano)
+        {
+           let calc
+           calc = dia * (mes + ano)
+           document.write(`O resto do calculo é: ${calc}`)
+         
+            }
+        dataNasc(dia,mes,ano)
+       
+
+    // 6 ) Efetue uma chamada a função declarada na etapa 5 e utilize uma estrutura switch ...case
+    //para analisar o retorno da função . Informe com document.write() qual a casa a que usuario pertence
+    //conforme esquema a seguir:
+    // retorno da função igual a 0: Casa Gado Demais
+    // retorno da função igual a 1: Casa Galo da Rinha
+    // retorno da função igual a 2: Casa Lacraste
+    // retorno da função igual a 3: Casa Smillinguido
+    
+    function dataNasc(dia,mes,ano){
+        let calc
+
+    switch(resto) {
+            case 0:
+               alert('Casa Gado Demais')
+               break
+
+            case 1:
+               alert('Casa Galo de Rinha')
+               break
+
+            case 2:
+               alert('Casa Lacraste')
+               break
+
+            default: 
+               alert('Casa Smilinguido')
+                           
+         }
+           return calc
+       }
+     
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
