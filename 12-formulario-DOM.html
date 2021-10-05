@@ -33,11 +33,21 @@
           display: inline;
 
         }
-
-        div 
+         /* para dar espaço entre os campos*/
+        div, fieldset   
         {
             margin-bottom: 20px
         }
+      
+        #saudacao {
+          border: 3px solid navy;
+          padding: 10px; /*Espaçamento interno*/
+          background-color: lightskyblue;
+          text-align: center;
+          border-radius: 10px;
+      }
+    
+
     </style>
 
 </head>
@@ -57,7 +67,7 @@
 
     <div>
         <label for = " form-trat">Forma de tratamento</label>
-        <select id = "forma-trat">
+        <select id = "form-trat">
             <option>(Selecione)</option>
             <option>Vossa Majestade</option>
             <option>Excelentíssimo</option>
@@ -90,7 +100,221 @@
 
       <!--exemplo quero criar 8 option*** select>option *8--->
       
+      <div>
+
+        <label for = "hora-dia"> Hora do dia</label>
+        <input id = "hora-dia" type = "number" min = "0" max = "23">
+      </div>
+
+      <!--type = checkbox pode marcar mais de uma opção -->
+
+      <fieldset>
+          <legend> Opções de exibição</legend>
+          <input id = "exibir-alert" type = "checkbox">
+          <label for = "exibir-alert"> Exibir com alert()</label> 
+          <br>
+          <input id = "exibir-documento" type = "checkbox">
+          <label for = "exibir-documento"> Exibir no documento</label>
+      </fieldset>
+
+      <div id = "saudacao">
       
+      <!-- Aqui vai aparecer a saudação se a opção "Exibir no documento" 
+      estiver marcada
+    -->
+      </div>
+
+      <div>
+          <button id = "enviar">Enviar</button>
+
+      </div>
+
+<!--
+Primeiro nome: Maria 
+Sobrenome: Catupirina
+Forma de tratamento: Excelentíssimo/a
+Sexo: Feminino
+Hora do dia: 20
+[X] Exibir com alert() 
+[X] Exibir no documento 
+
+Boa noite, Excelentíssima Maria Catupirina! Como posso ser útil?-->
     
+
+<script>
+
+    // 1 passo: capturar os elementos HTML
+
+    const primeiroNome = document.querySelector("#primeiro-nome")
+    const sobrenome= document.querySelector("#sobrenome")
+    const formaTrat = document.querySelector("#form-trat")
+    const masculino = document.querySelector("#masculino")
+    const feminino = document.querySelector("#feminino")
+
+    const horaDia = document.getElementById("hora-dia")
+    const exibirAlert = document.getElementById("exibir-alert")
+    const exibirDocumento = document.getElementById("exibir-documento")
+    const saudacao = document.getElementById("saudacao")
+    const enviar = document.getElementById("enviar")
+
+    /*antes de montar a saudação verificar se todas informações esta correta*/
+    // verifica se todas as informações necessárias foram preenchidas 
+    // no formulário.
+
+    function validar()
+    {
+        // Primeiro Nome ---precisa preencher o campo
+        if(primeiroNome.value === '')
+        {
+            alert("O primeiro nome precisa ser preenchido.")
+        // foco e o campo que esta em destaque
+        primeiroNome.focus()
+        return false //  O formulário contém erro
+
+        }
+        
+        //SOBRENOME
+        if(sobrenome.value === ' ')
+        {
+            alert("O sobrenome precisa ser preenchido.")
+            sobrenome.focus()
+            return false
+        }
+
+        // FORMA DE TRATAMENTO -----SELECT ---tem várias opções--índice tem que
+        //maior que 0-----------
+
+        if(formaTrat.selectedIndex <=0)
+        {
+            alert("Selecione uma forma de tratamento")
+            formaTrat.focus()            
+             return false
+        }
+
+        //HORA DO DIA --temos que fazer a conversão
+        let valHoraDia = parseInt(horaDia.value)   
+
+        if(isNaN(valHoraDia) || valHoraDia < 0 || valHoraDia >23)
+        {
+            alert("A hora do dia deve ser um valor entre 0 e 23.")
+            horaDia.focus()
+            return false
+        }
+
+        //OPÇÕES DE EXIBIÇÃO - VALIDAR PARA PELO MENOS UMA ESTAR MARCADA
+
+        if((! exibirAlert.checked) && (! exibirDocumento.checked))
+        {
+            alert("Pelo menos uma das opções de exibição deve estar marcada")
+            exibirAlert.focus()
+            return false
+        }
+
+        return true // O FORMULÁRIO E VÁLIDO ****TEM QUE CHEGAR AQUI SEM ENTRAR NO IF
+
+    }
+
+
+
+
+    function montarSaudacao()
+    {
+       if(validar())
+       {
+        //Boa noite, Excelentíssima Maria Catupirina! Como posso ser útil?
+
+        let textoSaudacao = ' '
+
+        if(horaDia.value < 12)
+        {
+            textoSaudacao = 'Bom dia, '
+        
+        }
+         else if(horaDia.value < 18)
+         {
+             textoSaudacao = 'Boa Tarde, '
+         }
+
+         else 
+        {
+            textoSaudacao = 'Boa noite, '
+        }
+
+        switch(formaTrat.selectedIndex)
+        {
+            case 1: 
+                textoSaudacao += 'Vossa Majestade'
+                break
+            case 2:
+                if(masculino.checked)
+                {
+                    textoSaudacao += 'Excelentíssimo'
+                }
+                else
+                 {
+                    textoSaudacao += 'Excelentíssima'
+                }        
+                break
+            case 3:
+                if(masculino.checked)
+                {
+                    textoSaudacao += 'Ilustríssimo'
+                }
+                else
+                 {
+                     textoSaudacao += 'Ilustríssima'
+                 }
+                break
+            case 4:
+                textoSaudacao += 'Vossa Senhoria'
+                break
+            case 5:
+                if(masculino.checked)
+                {
+                    textoSaudacao += 'Senhor'
+                }
+                else
+                {
+                    textoSaudacao += 'Senhora'
+                }
+                break
+
+                default: //case 6
+
+                if(masculino.checked)
+                {
+                    textoSaudacao += 'Cremosíssimo'
+                }
+                else
+                {
+                    textoSaudacao += 'Cremosíssima'
+                }
+
+        
+            }  
+
+            textoSaudacao += primeiroNome.value + ' '  + sobrenome.value + '!'
+            textoSaudacao +=  'Como posso ser útil?'
+
+            if(exibirAlert.checked)
+            {
+                alert(textoSaudacao)
+            }
+            if(exibirDocumento.checked)
+            {
+                saudacao.textContent = textoSaudacao
+            }
+
+        }
+
+      
+    }
+
+    enviar.addEventListener('click', montarSaudacao)
+
+</script>
+
+  
 </body>
 </html>
+
