@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+
+    <style>
+
+      *  {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        label
+         {
+           display: block;
+        }
+
+        fieldset label
+        {
+          /* Labels dentro de fieldsetes voltam a ser inline*/
+          display: inline;
+
+        }
+
+        fieldset
+        {
+            border: 1px solid slategray;
+            border-radius: 10px;   /*Borda arredondada*/
+        }
+
+        div, fieldset
+        {
+            margin-bottom: 20px
+           
+        }
+
+    
+      #resultado {
+          border: 3px solid rgb(238, 237, 238);
+          padding: 10px; /*Espaçamento interno*/
+          background-color: rgb(245, 242, 244);
+          text-align: center;
+          border-radius: 10px;
+          
+      }
+    </style>
+</head>
+
+<body>
+        <h1>Calculadora DOM</h1>
+
+        <!--Comando para inserir o primeiro número -->
+
+        <div>
+             <label for = "num1">Primeiro Número</label>
+             <input id = "num1" type = "number">
+        </div>
+
+        <!--Seleção do operador de cálculo -->
+        
+        <div>
+            <label for = "oper">Operação</label>
+            <select id ="oper">
+            <option>(Selecione)</option> 
+            <option>Soma(+)</option>
+            <option>Subtração(-)</option>
+            <option>Multiplicação(*)</option>
+            <option>Divisão(/)</option>  
+            </select> 
+        </div>
+
+        <!--Comando para inserir o segundo número -->
+
+        <div>
+            <label for = "num2">Segundo Número</label>
+            <input id = "num2" type = "number">
+       </div>
+
+        <!--Mostrar o resultado no documento -->
+
+       <fieldset>
+        <input id = "exibir-Documento" type = "checkbox">
+        <label for = "exibir-Documento"> Exibir Documento</label>
+       </fieldset>
+
+         <!--Resultado--> 
+        <div id = "resultado"></div>  
+
+        <!--BOTÃO CALCULAR--> 
+        <div>
+            <button id = "calcular" >Calcular</button>
+        </div>
+
+        <!--CAPTURAR OS ELEMENTOS-->  
+     
+        <script>
+            
+            const num1 = document.querySelector("#num1")
+            const num2 = document.getElementById("num2")
+            const oper = document.getElementById("oper")
+            const calcular = document.getElementById("calcular") 
+            const resultado = document.getElementById("resultado")
+            const exibirDocumento = document.getElementById("exibirDocumento")
+
+        /* VALIDAR OS DADOS */    
+
+         function validar()
+         {
+            
+            let valorNum1 = Number(num1.value)
+            let valorNum2 = Number(num2.value)
+                           
+             if(isNaN(valorNum1))
+              {
+                alert('Informe o primeiro número.')
+                num1.focus()
+                return false
+             }
+            
+             if(oper.selectedIndex <= 0) 
+            {
+               alert('Selecione uma operação.')
+               oper.focus()
+               return false
+            }
+
+           if (isNaN(valorNum2))
+            {
+                 alert('Informe o segundo número.')
+                 num2.focus()
+                 return false
+            }
+
+           return true   
+        }    
+          
+        /* MONTAR A FUNÇÃO COM SWITCH CASE*/ 
+
+        function calculo() 
+        {
+
+          if(validar()) {
+           let res
+           let valorNum1 = Number(num1.value)
+            let valorNum2 = Number(num2.value)
+
+            switch(oper.selectedIndex) {
+               case 1: // Adição
+                  res = valorNum1 + valorNum2
+                  break
+
+               case 2: // Subtração
+                  res = valorNum1 - valorNum2
+                  break
+
+               case 3: // Multiplicação
+                  res = valorNum1 * valorNum2
+                  break
+
+               case 4: // Divisão
+                  res = valorNum1 / valorNum2
+                  break
+                           
+              }
+
+              if (resultado != undefined) {
+                 resultado.textContent = res
+              }
+
+           }
+        }
+        
+       
+        calcular.addEventListener('click', calculo)
+
+        </script>
+         
+         
+</body>
+</html>
