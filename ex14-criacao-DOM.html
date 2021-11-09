@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14- Criacao do Dom</title>
+</head>
+<body>
+     
+      
+     <!--Todos os elementos devem ser inseridos usando JavaScript.
+    
+     1) Insira três itens na lista ordenada, com os valores "Belarmina", 
+       "Luzinete" e "Roberval".-->
+     
+    <h1>Nomes Próprios</h1>
+    <ol id = 'nomes' type = '1'>
+        <li id = 'Be'>Belarmina</li>
+        <li id = 'Lu'>Luzinete</li>
+        <li id = 'Ro'>Roberval</li>
+    </ol>
+
+     <script>    
+     /*
+        2) Insira na lista os itens "Adamastor", "Ildefonso", "Querência" e
+       "Turíbio", mantendo a ordem alfabética.
+     */
+
+      //Capturando os elementos
+      const lista = document.querySelector('#nomes')
+
+      //Primeira etapa
+      const nomeAd = document.createElement('li')
+      nomeAd.textContent = 'Adamastor'
+
+      //Segunda Etapa
+
+      lista.insertBefore(nomeAd, document.querySelector('#Be'))
+
+      //Primeira etapa - Ildefonso
+
+      const nome
+
+
+
+     
+     /*
+     3) Insira um título de nível 2 logo abaixo do título de nível 1, com
+       o texto "Lista de candidatos".
+
+     4) Insira um parágrafo abaixo da lista ordenada, com o texto "Irão
+       para o segundo turno os dois candidatos mais votados.".
+
+     */
+
+     </script>  
+    
+</body>
+</html>

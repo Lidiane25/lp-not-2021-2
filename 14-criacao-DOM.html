@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criacao novos elementos no DOM</title>
+</head>
+<body>
+     
+
+    <h1>Estados da região Nordeste</h1>
+
+    <ol id = "estados" type = "a">
+        <li id = "al">Alagoas</li>
+        <li id = "ce">Ceará</li>
+    </ol>
+
+    <!--<p> A região Nordeste possui nove estados.</p> Como criar esse paragrafo em javaScript-->
+
+    <script>
+
+        // Capturar o elemento correspondente à lista
+        const lista = document.querySelector('#estados')
+
+        /************************************************
+         * Para adicionar novos elementos HTML a uma página
+         * usando JavaScript, são necessárias DUAS ETAPAS.
+         * *********************************************/
+
+         // PRIMEIRA ETAPA: A criação propriamente dita do elemento.
+         // Essa tarefa cabe ao PROPRIETÁRIO(ower), que é sempre o
+         //*****Document***** Isso é feito com uma chamada a
+         //****document.creatElement().
+         
+         const itemPB = document.createElement('li')
+
+         //Ajustando algumas propriedades do novo elemento
+
+         itemPB.id = 'pb'
+         itemPB.textContent = 'Paraíba'
+
+         // SEGUNDA ETAPA: o novo elemento precisa ser associado a um 
+         // pai. Uma das formas de um pai "adotar" um elemento
+         //como filho é usando appendChild()
+
+         lista.appendChild(itemPB)
+
+         /**************************************/
+
+         //Primeira etapa- todas caracteristicas que você quer incluir do novo item 
+
+         const itemPE = document.createElement('li')
+
+         itemPE.id = 'pe'
+         itemPE.textContent = 'Pernambuco'
+         itemPE.style.color = 'deeppink'
+
+         //Segunda etapa
+
+         lista.appendChild(itemPE)
+         /**********************************************************/
+
+         //Primeira Etapa -criação do novo paragráfo
+
+         const parag = document.createElement('p')
+
+         parag.textContent = 'A região Nordeste possui nove estados.'
+
+         // Segunda etapa-------- appendchild sempre vai colocar no ultima elemento do PAI(o adotado e sempre o caçula)
+
+         document.body.appendChild(parag)
+
+         /*************************************************************/
+
+         //Primeira Etapa
+
+         const itemSE = document.createElement('li')
+
+         itemSE.id = 'se'
+         itemSE.textContent = 'Sergipe'
+         itemSE.style.fontStyle = 'italic'
+
+         // Segunda Etapa
+
+         lista.appendChild(itemSE)
+
+         /**************************************************************/
+
+         //Primeira etapa
+
+         const itemRN = document.createElement('li')
+
+         itemRN.id = 'rn'
+         itemRN.textContent = 'Rio Grande do Norte'
+         itemRN.style.fontVariant = 'small-caps'
+
+         // Para controlar a posição de um novo elemento será
+         //inserido, usamos insertBefore().Este metódo necessita
+         //que um outro elemento seja especificado como referencial
+         //de localização do ponto de inserção.
+
+         //Ordem dos parâmetros
+         // 1º: o novo elemento
+         // 2º: o elemento de referência, ANTES do qual serpá inserido
+
+         lista.insertBefore(itemRN, itemSE)
+
+         /*****************************************************/
+
+         // Primeira etapa - dos itens que foram criados no HTML
+
+         const itemBA = document.createElement('li')
+
+         itemBA.id = 'ba'
+         itemBA.textContent = 'Bahia'
+         itemBA.style.color = 'blue'
+
+         // Segunda etapa --- o correto e colocar entre bahia e Ceara eu não tenho Ceara capturado o que fazer?
+         // você coloca o document.querysecector
+
+         lista.insertBefore(itemBA, document.querySelector('#ce'))
+
+        /************************************************************/
+
+        // Primeira etapa para inserir o MAPA antes do h1 lá em cima que e o primeiro item 
+
+        const mapa = document.createElement('img')
+
+        mapa.src = 'imagens/Mapa Nordeste.png'
+        
+        // transforma o elemento do tipo bloco
+
+        mapa.style.display = 'block'
+
+        //20px top e bottom, automático nas laterais left e right
+        mapa.style.margin = '20px auto'
+
+
+        // Segunda etapa, usando insertBefore()
+
+        //  document.body.insertBefore(mapa, document.querySelector('h1'))
+
+        // Segunda etapa, usando prepend() porque o mapa passará a ser o 
+        // primeiro filho do body
+        // o prepend e a vantagem que não precisa de um ponto de ancoragem
+        document.body.prepend(mapa)
+
+        /**************************************************************************/
+
+        //Primeira Etapa
+
+        const itemMA = document.createElement('li')
+
+        itemMA.textContent = 'Maranhão'
+
+        // Segunda etapa
+
+        lista.insertBefore(itemMA, itemPB)
+        
+        /**************************************************************************/
+
+        //Primeira Etapa
+
+        const itemPI = document.createElement('li')
+
+        itemPI.textContent = 'Piauí'
+
+        // Segunda etapa
+
+        lista.insertBefore(itemPI, itemRN)
+
+    </script>
+    
+</body>
+</html>
