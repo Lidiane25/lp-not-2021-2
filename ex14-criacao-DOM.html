@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,11 +40,31 @@
 
       //Primeira etapa - Ildefonso
 
-      const nome
+      const nomeIl = document.createElement('li')
+      nomeIl.textContent = 'Ildelfonso'
 
+      //Segunda etapa
 
+      lista.insertBefore(nomeIl,document.querySelector('#Lu') )
+
+       //Primeira etapa - Querência
+
+       const nomeQu = document.createElement('li')
+      nomeQu.textContent = 'Querência'
+
+      //Segunda etapa
+
+      lista.insertBefore(nomeQu,document.querySelector('#Ro') )
 
      
+       //Primeira etapa - Turíbio
+
+       const nomeTu = document.createElement('li')
+       nomeTu.textContent = 'Turíbio'
+
+      //Segunda etapa
+
+      lista.appendChild(nomeTu)
      /*
      3) Insira um título de nível 2 logo abaixo do título de nível 1, com
        o texto "Lista de candidatos".
