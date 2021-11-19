@@ -7,9 +7,11 @@
 </head>
 <body>
     <h1>Estados do Sudeste e do Sul do Brasil</h1>
-    <ul>
-
-    </ul>
+    
+        <ul type="square"> 
+           
+            </ul>  
+    
     <script>
                 
         /*
@@ -20,21 +22,74 @@
         let capitais = []
 
             
-           /*
-            2) Usando o método de inserção NO INÍCIO do vetor, coloque os seguintes Estados
-               no vetor:
-               São Paulo
-               Santa Catarina
-               Rio Grande do Sul
-               Rio de Janeiro
-               Paraná
-               Minas Gerais
-               Espírito Santo
-        
-            3) Percorra o vetor com um loop for..of, crie um item de lista para cada um dos elementos do vetor e insira-o na lista não ordenada.
+         /*
+         2) Usando o método de inserção NO INÍCIO do vetor, coloque os seguintes Estados
+         no vetor:
+         São Paulo
+         Santa Catarina
+         Rio Grande do Sul
+         Rio de Janeiro
+         Paraná
+         Minas Gerais
+         Espírito Santo
+         */
 
-        */
-                  
+         capitais.unshift('São Paulo', 'Santa Catarina', 'Rio Grande do sul', 'Rio de Janeiro', 'Paraná', 'Minas Gerais', 'Espírito Santo')
+         document.write(capitais + '<br>')
+
+
+         //Passando um traço
+         document.write('<hr>')
+
+         /*
+               
+        
+         3) Percorra o vetor com um loop for..of, crie um item de lista para cada um dos elementos do vetor e insira-o na lista não ordenada
+
+         */
+
+        for(let c of capitais)
+           
+           {
+            
+            document.write( c + '<br>')
+           }
+           
+           
+
+
+         // Capturando o elemento da lista não ordenada
+          const lista = document.querySelector('ul')
+
+         // Inserindo as Capitais na lista não ordenada  
+         const capitalSP = document.createElement('li')
+         capitalSP.textContent = 'São Paulo'
+         lista.appendChild(capitalSP) 
+
+         const capitalSC = document.createElement('li')
+         capitalSC.textContent = 'Santa Catarina'
+         lista.appendChild(capitalSC)
+
+         const capitalRS = document.createElement('li')
+         capitalRS.textContent = 'Rio Grande do Sul'
+         lista.appendChild(capitalRS)
+         
+         const capitalRJ = document.createElement('li')
+         capitalRJ.textContent = 'Rio de Janeiro'
+         lista.appendChild(capitalRJ)
+         
+         const capitalPR = document.createElement('li')
+         capitalPR.textContent = 'Paraná'
+         lista.appendChild(capitalPR)
+
+         const capitalMG = document.createElement('li')
+         capitalMG.textContent = 'Minas Gerais'
+         lista.appendChild(capitalMG)
+
+         const capitalES = document.createElement('li')
+         capitalES.textContent = 'Espírito Santo'
+         lista.appendChild(capitalES)
+
     </script>
 </body>
 </html>
